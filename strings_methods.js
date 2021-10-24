@@ -1,10 +1,44 @@
 // All string methods return a new string. They don't modify the original string.
 // Formally said: Strings are immutable: Strings cannot be changed, only replaced.
 
+// https://medium.com/dailyjs/javascript-strings-10-fundamentals-you-should-know-d29e6e5f3a1a
+
+// https://medium.com/nerd-for-tech/basics-of-javascript-string-length-property-ecea2ef24a8c
+
+/*
+                Strings are immutable
+
+                once declared strings cannot be changed
+*/
+
+let myString = "bluebells";
+myString.length = 4;
+console.log(myString); //bluebells
+console.log(myString.length); //9
+
+//--
+let myArr = [5, 6, 8, 2, 4, 7];
+myArr.length = 2;
+console.log(myArr); //[5, 6]
+console.log(myArr.length); //2
+
+/*
+                Strings Can be Objects
+
+*/
+let firstName = "John";
+let fName = new String("John");
+
+console.log(typeof firstName);
+console.log(firstName);
+console.log(typeof fName);
+console.log(fName);
+
 /*............................................STRING METHODS */
 var str = "soumitya chauhan";
 
 //...............................................Length
+console.log(".....................................Length");
 console.log(str.length);
 
 //..............................................slice() :
@@ -108,14 +142,17 @@ console.log(str.split(" "));
 // ..............................indexOf(searchValue, StartSearchingfromIndex)
 
 //indexOf() method returns the index of (the position of) the first occurrence of a specified text in a string
+console.log(".........................indexOf()");
 console.log(str.indexOf("a"));
 console.log(str.indexOf("soumitya"));
 console.log(str.indexOf("a", 9));
+console.log(str.indexOf("5"));
 
 // .......................................lastIndexOf()
 // ..............................lastIndexOf(searchValue, StartSearchingfromIndex)
 
 // lastIndexOf() method returns the index of the last occurrence of a specified text in a string
+console.log(".........................lastIndexOf()");
 console.log(str.lastIndexOf("a"));
 console.log(str.lastIndexOf("o"));
 console.log(str.lastIndexOf("h", 5));
@@ -138,7 +175,7 @@ console.log(str.search("a"));
 // .........................................................String.includes()
 // string.includes(searchvalue, start)
 
-//  includes() method returns true if a string contains a specified value
+//  includes() method returns "true" if a string contains a specified value
 console.log(str.includes("a"));
 console.log(str.includes("it"));
 console.log(str.includes("ha", 8));
