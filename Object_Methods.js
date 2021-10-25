@@ -79,3 +79,69 @@ p3.printName();
  *
  *
  */
+const obj = {
+  a: 1,
+  b: 2,
+  c: 3,
+};
+
+const childObj = {
+  name: {
+    configurable: false,
+    writable: false,
+    value: "hello",
+  },
+  age: {
+    writable: true,
+    value: "hello",
+  },
+
+  a: {
+    configurable: true,
+    enumerable: true,
+    value: "hello", // comimg from prototype
+  },
+};
+const newObj = Object.create(obj, childObj);
+console.log(newObj, "haha");
+newObj.address = "abc nagar";
+newObj.name = 1;
+newObj.age = 1;
+newObj.a = "soumitya";
+console.log(newObj);
+
+// enumerable
+for (let keys in newObj) {
+  console.log(keys);
+}
+
+// configurable
+delete newObj.a;
+
+delete newObj.address;
+console.log(newObj, "configurable");
+
+//writable:ture means that the property’s value can be changed if ture if false it will not change
+
+//enumerable:false means property during ittration  will not shows only work for prototype
+
+// configurable:true means the object can be delete
+
+/**
+ *
+ *
+ * Object.assign()
+ * method copies all enumerable own properties from one or more source
+ *
+ *
+ */
+const target = { a: 1, b: 2 };
+const source = { b: 4, c: 5 };
+
+const returnedTarget = Object.assign(target, source);
+
+console.log(target);
+// expected output: Object { a: 1, b: 4, c: 5 }
+
+console.log(returnedTarget);
+// expected output: Object { a: 1, b: 4, c: 5 }
