@@ -130,6 +130,7 @@ console.log(newObj, "configurable");
 /**
  *
  *
+ *
  * Object.assign()
  * method copies all enumerable own properties from one or more source
  *
